@@ -3,7 +3,7 @@ import ProductManager from './productManager.js'
 
 const app = express()
 
-const products = new ProductManager()
+const products = new ProductManager('BD.json')
 
 app.get('/', (req, res) => {
   return res.send('<h1> Servidor Express </h1>')
@@ -13,7 +13,7 @@ app.get('/api/products', (req, res) => {
   
   const { limit } = req.query
 
-  const data = products.getProduct()
+    const data = products.getProduct()
 
   let limitPro
 

@@ -4,12 +4,13 @@ import fs from 'fs'
 class ProductManager {
 
     // Variables privadas
-    static id = 0;
+    static id;
     #path
 
     constructor(path) {
         this.#path = path
         this.products = this.#readFile()
+        ProductManager.id = this.products.length > 0 ? this.products[this.products.length - 1].id : 0  
     }
 
     #readFile() {
@@ -49,11 +50,12 @@ class ProductManager {
         if (!Object.values(newProduscts).includes(undefined)) {
             // Incrementams el id
             ProductManager.id++;
+            fs.writeFileSync(this.#path, JSON.stringify(this.products))
             this.products.push({
                 // Llamammos al id iautoincremental
                 id: ProductManager.id, ...newProduscts
             })
-            fs.writeFileSync(this.#path, JSON.stringify(this.products))
+            
         } else {
             info = "Falta completar datos"
         }
@@ -84,8 +86,9 @@ class ProductManager {
 
         if (index >= 0) {
             const { id, ...rest } = properties
-            this.products[index] = { ...this.products[index], ...rest }
             fs.writeFileSync(this.#path, JSON.stringify(this.products))
+            this.products[index] = { ...this.products[index], ...rest }
+            
             info = `El Producto con ID: ${index + 1}, se Actualizó correctamente`
         } else {
             info = `El Producto con ID: ${id}, no existe`
@@ -102,8 +105,9 @@ class ProductManager {
         const index = this.products.findIndex(i => i.id === id)
 
         if (index >= 0) {
-            this.products.splice(index, 1);
             fs.writeFileSync(this.#path, JSON.stringify(this.products))
+            this.products.splice(index, 1);
+            
             info = `El Producto con ID: ${id}, se eliminó correctamente`
         } else {
             info = `El Producto con ID: ${id}, no existe`

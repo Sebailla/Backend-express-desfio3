@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "cafe",
+    "description": " Cafe Instantáneo granulado",
+    "price": 1600,
+    "thumbnail": "https://imagen_cafe.jpg",
+    "code": "ca1",
+    "stock": 25
+  },
+  {
+    "id": 2,
+    "title": "Dulce de Leche",
+    "description": "Dulce de Leche por 400 gr.",
+    "price": 875,
+    "thumbnail": "https://imagen_mermelada.jpg",
+    "code": "mer1",
+    "stock": 255
+  },
+  {
+    "id": 3,
+    "title": "Leche",
+    "description": "Leche Sachet por 1 litro",
+    "price": 350,
+    "thumbnail": "https://imagen_leche.jpg",
+    "code": "lec1",
+    "stock": 345
+  },
+  {
+    "id": 4,
+    "title": "Galletas",
+    "description": "Galletas desayuno  x 150 gr.",
+    "price": 150,
+    "thumbnail": "https://imagen_galletas_desayuno.jpg",
+    "code": "ga1",
+    "stock": 540
+  },
+  {
+    "id": 5,
+    "title": "Jabón",
+    "description": "Jabón de tocador por 125 gr.",
+    "price": 850,
+    "thumbnail": "https://imagen2.jpg",
+    "code": "ja2",
+    "stock": 345
+  }
+]
