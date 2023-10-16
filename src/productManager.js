@@ -74,8 +74,8 @@ class ProductManager {
 
     //Mostramos los productos por ID
     getProductById(id) {
-
-        return !this.exist(id) ? console.log("Not Found") : console.log(this.exist(id))
+        let info
+        return !this.exist(id) ? info = {error: "Not Found"} : this.exist(id)
     }
 
     //Actualizamos un producto

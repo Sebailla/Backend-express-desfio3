@@ -6,7 +6,7 @@ const app = express()
 const products = new ProductManager('BD.json')
 
 app.get('/', (req, res) => {
-  return res.send('<h1> Servidor Express </h1>')
+  return res.send('<h1> Servidor Express - 3º Desafio entregable </h1>')
 })
 
 app.get('/api/products', (req, res) => {
